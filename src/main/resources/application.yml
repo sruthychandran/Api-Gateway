@@ -1,0 +1,33 @@
+zuul:
+  ignored-services: '*'
+  host:
+    max-total-connections: 1000
+    max-per-route-connections: 1000
+  routes:
+    admin:
+      path: /admin/**
+      sensitive-headers: null
+      service-id: admin
+      strip-prefix: false
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    enabled: true
+    
+
+spring:
+   application:
+      name: apigateway
+
+
+      
+      
+      
+      
+server:
+   port: 8081
